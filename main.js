@@ -16,8 +16,17 @@ var displayTemperature2 = document.getElementById('displayTemperature2')
 var displayCondition2 = document.getElementById('displayCondition2')
 var displayConditionImage2 = document.getElementById('displayConditionImage2')
 
+var cityBackgroundEmpty = document.getElementById('cityBackgroundEmpty')
+var cityBackgroundEmpty1 = document.getElementById('cityBackgroundEmpty1')
+var cityBackgroundEmpty2 = document.getElementById('cityBackgroundEmpty2')
+
 function getWeather() {
     var cityName = document.getElementById('cityInput').value;
+
+    cityBackgroundEmpty.setAttribute("id","cityBackground")
+    cityBackgroundEmpty1.setAttribute("id","cityBackground1")
+    cityBackgroundEmpty2.setAttribute("id","cityBackground2")
+
     fetch(`https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${cityName}&days=3`,
         { mode: 'cors' })
         .then(function (response) {
