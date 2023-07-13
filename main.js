@@ -1,6 +1,7 @@
+// weatherAPI Key
 let key = '4d0963ecdbe44b779fc05637231207';
 
-// how to get information from website
+// set variable names for all different visual components
 var displayCityName = document.getElementById('displayCityName')
 var displayTemperature = document.getElementById('displayTemperature')
 var displayCondition = document.getElementById('displayCondition')
@@ -20,13 +21,17 @@ var cityBackgroundEmpty = document.getElementById('cityBackgroundEmpty')
 var cityBackgroundEmpty1 = document.getElementById('cityBackgroundEmpty1')
 var cityBackgroundEmpty2 = document.getElementById('cityBackgroundEmpty2')
 
+// retrieve and display weather data from API
 function getWeather() {
+
+    // retrieve user input
     var cityName = document.getElementById('cityInput').value;
 
     cityBackgroundEmpty.setAttribute("id","cityBackground")
     cityBackgroundEmpty1.setAttribute("id","cityBackground1")
     cityBackgroundEmpty2.setAttribute("id","cityBackground2")
 
+    // fetch 3 days of data based on user inputted location
     fetch(`https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${cityName}&days=3`,
         { mode: 'cors' })
         .then(function (response) {
@@ -34,10 +39,8 @@ function getWeather() {
         })
         .then(function (response) {
             console.log(response);
-            // const div = document.createElement("div");
-            // div.setAttribute("id","cityBackground");
-            // document.body.appendChild(div)
 
+            // alter visual displays with retrieved API data
             displayCityName.innerHTML = response.location.name;
             displayTemperature.innerHTML = response.current.temp_c + '\xB0' + 'C';
             displayCondition.innerHTML = response.current.condition.text;
@@ -53,9 +56,12 @@ function getWeather() {
             displayCondition2.innerHTML = response.forecast.forecastday[2].day.condition.text;
             displayConditionImage2.src = 'https:' + response.forecast.forecastday[2].day.condition.icon;
         })
+
+    // clear input field after every query
     document.getElementById('cityInput').value = ''
 }
 
+// enable use of enter key to submit form
 var input = document.getElementById('cityInput');
 input.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
