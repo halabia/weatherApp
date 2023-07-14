@@ -1,0 +1,31 @@
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background-image: url(images/backgroundClouds.jpg);
+    background-size: 100vh;
+    background-repeat: no-repeat; */
+}
+
+#cityBackground {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: lightblue;
+    border-style: solid;
+    border-color: black;
+    padding: 1vw;
+}
+
+#displayCityName {
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+#displayCondition {
+    font-style: oblique;
+}
+
+

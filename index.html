@@ -15,10 +15,19 @@
 </head>
 
 <body>
-    <h1>Weather App</h1>
-    <input type="text" placeholder="City" id="cityInput">
-    <button onclick="getWeather()">Submit</button>
-    <div id="displayCityName"></div>
+    <div id="content">
+        <h1>Weather</h1>
+        <input type="text" placeholder="City" id="cityInput">
+        <br>
+        <button id="submitButton" onclick="getWeather()">Submit</button>
+        <br>
+        <div id="cityBackground">
+            <div id="displayCityName"></div>
+            <div id="displayTemperature"></div>
+            <img id="displayConditionImage" src="">
+            <div id="displayCondition"></div>
+        </div>
+    </div>
     <script src="main.js" async defer></script>
 </body>
 
