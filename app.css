@@ -8,7 +8,7 @@
     background-repeat: no-repeat; */
 }
 
-#cityBackground {
+.cityBackground {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,15 +17,20 @@
     border-style: solid;
     border-color: black;
     padding: 1vw;
+    width: 12vw;
 }
 
-#displayCityName {
+#displayCityName, #displayDate1, #displayDate2 {
     font-size: 2vw;
     font-weight: bold;
 }
 
-#displayCondition {
+#displayCondition, #displayCondition1, #displayCondition2 {
     font-style: oblique;
+}
+
+#futureWeather {
+    display: flex;
 }
 
 
